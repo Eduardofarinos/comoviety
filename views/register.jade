@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  section#content
+    .ic
+    .main
+      .container
+        h3 Registrate con tus datos:
+        p
+        form(action="/users/register", method="post")
+          p
+            | Nombre de usuario: 
+            input.form-control(type="text", name="username", required='')
+          p
+            | Contraseña: 
+            input.form-control(type="password", name="password", required='')
+          p
+            | E-mail: 
+            input.form-control.email(type="text", name="email", required='')
+          p
+          input.btn.btn-primary(type="submit", value="Registar")

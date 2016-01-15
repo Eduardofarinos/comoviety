@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    section#content
+      .ic
+      .main
+        .container
+          h3 Busca tu película
+          p
+          form(action='/movies/search', method='post')
+            p
+              | Titulo:
+              input.form-control(type='text', name='title')
+            p
+              input.btn.btn-primary(type='submit', value='Buscar')
+            p
+              h3 Película no encontrada, prueba otra vez o añadela tu mismo

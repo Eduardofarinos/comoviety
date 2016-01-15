@@ -1,0 +1,76 @@
+extends layout
+
+block content
+    section#content
+      .ic
+      .main
+        .wrapper
+          article.col-1
+            .indent-left
+              h3.p1 Portada:
+              img(src='ruta', width='250', height='350')
+          article.col-2
+            h3.p1 Datos:
+            form#contact-form(action='insert.php', method='post', enctype='multipart/form-data')
+              fieldset
+                label
+                p
+                  span.text-form Título: 
+                  h8 #{result.title}
+                label
+                p
+                  span.text-form Director: 
+                  h8 #{result.director}
+                label
+                p
+                  span.text-form Año de producción: 
+                  h8 #{result.year}
+                label
+                p
+                  span.text-form Duración: 
+                  h8 #{result.duration}
+                label
+                p
+                  span.text-form País: 
+                  h8 #{result.country}
+                label
+                p
+                  span.text-form Categoria: 
+                  h8 #{result.category}
+                label
+                p
+                  span.text-form Puntuación: 
+                  h8 #{result.score}
+                |Sinopsis:
+                br
+                h8 #{result.sinopsis}
+    section#content
+      .ic
+      .main
+        .container
+          h7 Comentarios:
+          br
+          each val in result.comments
+            label
+              | #{val.user} dice:
+            br
+            textarea(name="comentario", rows="5", cols="100", style="background-color: #DCDCDC;")
+              | #{val.comment}
+            br
+
+          p
+          h7 Añade tu comentario
+          form(action="/movies/newcomment", method="post")
+            p
+              input.form-control(type='hidden', name='title', value='#{result.title}')
+            p 
+              if (typeof(user) == 'undefined')
+                h3 No se ha logeado
+              else
+                h1=user + " dice:"
+                br
+                input.form-control(type="hidden", name="user", value='')
+                textarea(name='comment', rows='5', cols='100')
+                    | Tu comentario.
+                  p
+                  input.btn.btn-primary(type="submit", value="Añadir")

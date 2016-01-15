@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    section#content
+      .ic
+      .main
+        .container
+          h7 Películas en la categoria de #{result[0].category}
+          ul.list-1
+          each val in result
+            li
+              a(href='/movies/#{val.title}')
+                strong
+                  | #{val.title}
+            span
+              | #{val.sinopsis}

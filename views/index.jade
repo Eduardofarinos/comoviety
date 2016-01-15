@@ -1,0 +1,58 @@
+extends layout
+
+block content
+  section#content
+    .slider-wrapper
+      .slider
+        ul.items
+          li
+            img(src='/images/slider-img1.jpg', alt='')
+          li
+            img(src='/images/slider-img2.jpg', alt='')
+          li
+            img(src='/images/slider-img3.jpg', alt='')
+
+    .wrapper.indent-bot
+      article.col-1
+        a(href='#')
+          img.img-border(src='/images/banner-1.jpg', alt='')
+      article.col-1
+        a(href='#')
+          img.img-border(src='/images/banner-2.jpg', alt='')
+      article.col-2
+        a(href='#')
+          img.img-border(src='/images/banner-3.jpg', alt='')
+    .wrapper
+      article.column-1
+        .indent-left
+          .maxheight.indent-bot
+            h3 Categorias
+            ul.list-1
+              li
+                a(href='/movies/category/Acción') Acción
+              li
+                a(href='/movies/category/Animación') Animación 
+              li
+                a(href='/movies/category/Aventura') Aventura
+              li
+                a(href='/movies/category/Ficción') Ficción
+              li
+                a(href='/movies/category/Comedia') Comedia
+              li
+                a(href='/movies/category/Romance') Romance
+              li
+                a(href='/movies/category/Horror') Horror
+              article.column-2
+                .maxheight.indent-bot
+                  h3.p1 Acerca de nosotros
+                  h6.p2
+                    | CoMoviety es un portal donde podras compartir tu opinión sobre todas las peliculas que quieras, incluso añadir al repertorio de CoMoviety muchas más.
+                  |                         Este sitio tiene las siguientes paginas: 
+                  a(href='/') Inicio
+                  | , 
+                  a(href='/movies/search') Buscar Película
+                  | , 
+                  a(href='/movies/newmovie') Añadir Película
+                  | , 
+                  a(href='/faq') FAQ
+    

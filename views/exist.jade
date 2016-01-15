@@ -1,0 +1,63 @@
+extends layout
+
+block content
+    section#content
+      .ic
+      .main
+        .wrapper
+          form(action='/movies/newmovie', method='post')
+            article.col-1
+              .indent-left
+                h3.p1 Portada
+                h6.p2 Añade la portada del título.
+                span.text-form
+                  | Imagen:
+                  br
+                  input(name='photo', type='file')
+            article.col-2
+              h3.p1 Añade tu película. El titulo ya existe
+              fieldset
+                p
+                  | Título:
+                  input.form-control(type='text', name='title', required='')
+                p
+                  | Director:
+                  input.form-control(type='text', name='director')
+                p
+                  | Año:
+                  input.form-control(type='number', name='year')
+                p
+                  | Duración:
+                  input.form-control(type='number', name='duration')
+                  | min.
+                p
+                  | País:
+                  input.form-control(type='text', name='country')
+                p
+                  | Categoria:
+                  select(name='category')
+                    option(value='Acción') Acción
+                    option(value='Animación') Animación
+                    option(value='Aventura') Aventura
+                    option(value='Ficción') Ficción
+                    option(value='Comedia') Comedia
+                    option(value='Romance') Romance
+                    option(value='Horror') Horror
+                p
+                  | Puntuación:
+                  select(name='score')
+                    option(value='1') 1
+                    option(value='2') 2
+                    option(value='3') 3
+                    option(value='4') 4
+                    option(value='5') 5
+                    option(value='6') 6
+                    option(value='7') 7
+                    option(value='8') 8
+                    option(value='9') 9
+                    option(value='10') 10
+                p Sinopsis: 
+                p
+                  textarea(name='sinopsis', rows='5', cols='100') Resumen de la película.
+            p
+              input.btn.btn-primary(type='submit', value='Añadir')
